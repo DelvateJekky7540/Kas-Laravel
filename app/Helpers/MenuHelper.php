@@ -2,49 +2,35 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Facades\Auth;
+
 class MenuHelper
 {
     public static function getMainNavItems()
     {
-        return [
+        $items = [
             [
                 'icon' => 'dashboard',
                 'name' => 'Dashboard',
                 'path' => route('admin.dashboard'),
-            ],
-            [
+            ]
+        ];
+
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            $items[] = [
                 'icon' => 'calendar',
                 'name' => 'Calendar',
                 'path' => '/calendar',
-            ],
+            ];
+        }
+
+        return [
             [
-                'icon' => 'user-profile',
-                'name' => 'User',
-                'path' => route('user.index'),
+                'title' => 'Management',
+                'items' => $items,
             ],
-            [
-                'name' => 'Forms',
-                'icon' => 'forms',
-                'subItems' => [
-                    ['name' => 'Form Elements', 'path' => '/form-elements', 'pro' => false],
-                ],
-            ],
-            [
-                'name' => 'Tables',
-                'icon' => 'tables',
-                'subItems' => [
-                    ['name' => 'Basic Tables', 'path' => '/basic-tables', 'pro' => false]
-                ],
-            ],
-            [
-                'name' => 'Pages',
-                'icon' => 'pages',
-                'subItems' => [
-                    ['name' => 'Blank Page', 'path' => '/blank', 'pro' => false],
-                    ['name' => '404 Error', 'path' => '/error-404', 'pro' => false]
-                ],
-            ],
-        ];
+        ];  
+            
     }
 
     public static function getOthersItems()

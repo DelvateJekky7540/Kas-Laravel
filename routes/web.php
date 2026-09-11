@@ -50,7 +50,7 @@ Route::middleware(['cekLogin', 'role:user'])->group(function () {
 });
 
 // User 
-Route::get('/user', [UserController::class, 'index'])->name('user.index');
+// Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
 
 // Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');

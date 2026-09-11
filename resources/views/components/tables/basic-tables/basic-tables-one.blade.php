@@ -1,4 +1,4 @@
-<div x-data="{
+<div class="min-w-0 flex-1" x-data="{
     orders: [
         {
             id: 1,
@@ -99,7 +99,7 @@
 }">
     <div class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
         <div class="max-w-full overflow-x-auto custom-scrollbar">
-            <table class="w-full min-w-[1102px]">
+            <table class="w-full">
                 <thead>
                     <tr class="border-b border-gray-100 dark:border-gray-800">
                         <th class="px-5 py-3 text-start sm:px-6">
