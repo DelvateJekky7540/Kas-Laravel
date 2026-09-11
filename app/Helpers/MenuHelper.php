@@ -18,18 +18,13 @@ class MenuHelper
 
         if (Auth::check() && Auth::user()->role === 'admin') {
             $items[] = [
-                'icon' => 'calendar',
-                'name' => 'Calendar',
-                'path' => '/calendar',
+                'icon' => 'user-profile',
+                'name' => 'User',
+                'path' => route('user.index'),
             ];
         }
 
-        return [
-            [
-                'title' => 'Management',
-                'items' => $items,
-            ],
-        ];  
+        return $items;
             
     }
 

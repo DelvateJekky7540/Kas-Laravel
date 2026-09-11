@@ -66,7 +66,8 @@
             <img src="/images/user/owner.png" alt="User" />
         </span>
 
-        <span class="block mr-1 font-medium text-theme-sm rtl:mr-0 rtl:ml-1">Musharof</span>
+        <span class="block mr-1 font-medium text-theme-sm rtl:mr-0 rtl:ml-1">{{ Auth::user()->username }}</span>
+        
 
         <!-- Chevron Down Icon -->
         <svg
@@ -102,8 +103,8 @@
     >
         <!-- User Info -->
         <div>
-            <span class="block font-medium text-gray-700 text-theme-sm dark:text-gray-400">Musharof Chowdhury</span>
-            <span class="mt-0.5 block text-theme-xs text-gray-500 dark:text-gray-400">randomuser@pimjo.com</span>
+            <span class="block font-medium text-gray-700 text-theme-sm dark:text-gray-400">{{ Auth::user()->nama }}</span>
+            <span class="mt-0.5 block text-theme-xs text-gray-500 dark:text-gray-400">{{ Auth::user()->role }}</span>
         </div>
 
         <!-- Menu Items -->
